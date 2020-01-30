@@ -1,22 +1,120 @@
 {
 	"START": {
-		"name": "",
-		"desc": "",
+		"name": "TREELINE",
+		"desc": "Your eyes open to the blazing sun, so bright you shut them again. As you open them again, you realize you are laying just in the trees of a jungle. Looking out you notice a beach lays before you to the north.",
+		"print": "Go North or South",
 		"exits": [
 			{
-				"exit": "EXIT1",
-				"target": "LOCATION2"
-			}
-		]
-	}
-	,"LOCATION2": {
-		"name": "",
-		"desc": "",
+				"exit": "NORTH",
+				"target": "NBEACH"
+			}, {
+				"exit": "SOUTH",
+				"target": "SJUNGLE"
+			}]},
+
+	"NBEACH": {
+		"name": "North Beach",
+		"desc": "There is nothing in sight besides waves. On the ground, you see a bottle with a message inside.",
 		"exits": [
 			{
-				"exit": "EXIT1",
-				"target": "START"
-			}
-		]
+				"exit": "SOUTH",
+				"target": "SJUNGLE"
+			}],
+			"items": [
+		{
+			"item": "BOTTLE",
+			"desc": "The bottle lays at your feet.",
+			"take": "You pick up the bottle and read the message. It says... You have one day to discover the truth of the island. It is the only way to stay alive."
+		}]},
+
+	"SJUNGLE": {
+		"name": "The Jungle",
+		"desc": "The jungle is dark and dense. There is one tree that seems to stand taller than the other, perfect for climbing.",
+		"exits": [
+			{
+				"exit": "CLIMB",
+				"target": "TREETOP"
+			}, {
+				"exit": "SOUTH",
+				"target": "DEEPJUNGLE"
+			}, {
+				"exit": "EAST",
+				"target": "FALL"
+			}, {
+				"exit": "WEST",
+				"target": "CLEARING"
+			}]},
+
+	"TREETOP": {
+		"name": "At the top of the tree",
+		"desc": "The wind blows strong, and the sun looms over head. As you look around, you realize you are on a small isalnd. Water lies in every direction with nothing in sight. To the east you see a waterfall leading to a pool of water. To the west you see a clearing in the trees.",
+		"exits": [
+			{
+				"exit": "DOWN",
+				"target": "SJUNGLE"
+			}]},
+	
+	"DEEPJUNGLE": {
+		"name": "Deep in the dark jungle",
+		"desc": "It is darker here. Suddenly you hear a rustle in the leaves, a twig snaps. A large, black, hairy, head appears and then a jaguar emerges with a low growl. You see a sword on the ground.",
+		"exits": [
+			{
+				"exit": "RUN",
+				"target": "SJUNGLE"
+			}, {
+				"exit": "NORTH",
+				"target": "SJUNGLE"
+			}, {
+				"exit": "SWORD",
+				"target": "DEATH" 
+			}],
+				"items": [
+			{
+				"item": "SWORD",
+				"desc": "You pick up the sword to face the jaguar, but you should know better than to face a wild beast. It attacks, and the sword does litle to stop the creature."
+			}]},
+
+	"FALL": {
+		"name": "A waterfall dropping into a deep pool",
+		"desc": "At the bottom of the pool you think you seem something shining.",
+		"exits": [
+			{
+				"exit": "SWIM",
+				"target": "LIGHT"
+			}, {
+				"exit": "WEST",
+				"target": "SJUNGLE"
+			}]},
+
+	"CLEARING": {
+		"name": "An empty clearing, or so it seems",
+		"desc": "Across the clearing an old man dressed in a raggy cloak steps out of the shadows. He approaches you. When he speaks, he asks if you have brought it.",
+		"exits": [
+			{
+				"exit": "YES",
+				"target": "CLOUDS"
+			}, {
+				"exit": "NO",
+				"target": "SJUNGLE"
+			}]},
+
+	"LIGHT": {
+		"name": "The bottom of the pool",
+		"desc": "Through the crystl clear water you see an crystal rock, glowing.",
+		"exits": [
+			{
+				"exit": "UP",
+				"target": "FALL"
+			}],
+				"items": [
+			{
+				"item": "ROCK",
+				"desc": "You pick up the rock, and it continues to glow but nothing seems happens."
+			}]},
+
+	"CLOUDS": {
+		"name": "High in the sky amidst the clouds",
+		"desc": "Suddenly, as if by magic, you find yourself floating among the clouds. The man from the clearing appears in front of you. He says you have earned the truth of the island. You are here today, like many before you, because you have to a turning point in life. Death has come, but by accepting your fate and the challenge of the island, you have proved you are ready to move on to your next life cycle. Once leaving this place your new life will begin. Until we meet again, live well."
+
 	}
 }
