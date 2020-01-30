@@ -1,0 +1,22 @@
+{
+	"START": {
+		"name": "",
+		"desc": "",
+		"exits": [
+			{
+				"exit": "EXIT1",
+				"target": "LOCATION2"
+			}
+		]
+	}
+	,"LOCATION2": {
+		"name": "",
+		"desc": "",
+		"exits": [
+			{
+				"exit": "EXIT1",
+				"target": "START"
+			}
+		]
+	}
+}
