@@ -1,16 +1,16 @@
 {
 	"START": {
 		"name": "TREELINE",
-		"desc": "Your eyes open to the blazing sun, so bright you shut them again. As you open them again, you realize you are laying just in the trees of a jungle. Looking out you notice a beach lays before you to the north.",
-		"print": "Go North or South",
-		"exits": [
-			{
+		"desc": "Your eyes open to the blazing sun. You wince and shut them immediately. As you open your eyes again, you realize you are laying just in the treeline of a jungle. Looking out, you notice a beach lays before you to the north.",
+		"exits": [{
 				"exit": "NORTH",
 				"target": "NBEACH"
-			}, {
+		}, {
 				"exit": "SOUTH",
 				"target": "SJUNGLE"
-			}]},
+		}],
+		"items": []
+	},
 
 	"NBEACH": {
 		"name": "North Beach",
@@ -20,12 +20,12 @@
 				"exit": "SOUTH",
 				"target": "SJUNGLE"
 			}],
-			"items": [
-		{
+		"items": [{
 			"item": "BOTTLE",
-			"desc": "The bottle lays at your feet.",
-			"take": "You pick up the bottle and read the message. It says... You have one day to discover the truth of the island. It is the only way to stay alive."
-		}]},
+			"desc": "The bottle lays at your feet. Will you take the bottle or leave it?",
+			"take": "You pick up the bottle."
+		}]
+	},
 
 	"SJUNGLE": {
 		"name": "The Jungle",
@@ -43,7 +43,9 @@
 			}, {
 				"exit": "WEST",
 				"target": "CLEARING"
-			}]},
+		}],
+		"items": []
+	},
 
 	"TREETOP": {
 		"name": "At the top of the tree",
@@ -52,7 +54,9 @@
 			{
 				"exit": "DOWN",
 				"target": "SJUNGLE"
-			}]},
+		}],
+		"items": []
+	},
 	
 	"DEEPJUNGLE": {
 		"name": "Deep in the dark jungle",
@@ -63,16 +67,13 @@
 				"target": "SJUNGLE"
 			}, {
 				"exit": "NORTH",
-				"target": "SJUNGLE"
-			}, {
-				"exit": "SWORD",
-				"target": "DEATH" 
-			}],
-				"items": [
-			{
-				"item": "SWORD",
-				"desc": "You pick up the sword to face the jaguar, but you should know better than to face a wild beast. It attacks, and the sword does litle to stop the creature."
-			}]},
+				"target": "SJUNGLE" 
+		}],
+		"items": [{
+			"item": "SWORD",
+			"desc": "You pick up the sword to face the jaguar, but you should know better than to face a wild beast. It attacks."
+		}]
+	},
 
 	"FALL": {
 		"name": "A waterfall dropping into a deep pool",
@@ -84,7 +85,9 @@
 			}, {
 				"exit": "WEST",
 				"target": "SJUNGLE"
-			}]},
+		}],
+		"items": []
+	},
 
 	"CLEARING": {
 		"name": "An empty clearing, or so it seems",
@@ -96,7 +99,9 @@
 			}, {
 				"exit": "NO",
 				"target": "SJUNGLE"
-			}]},
+		}],
+		"items": []
+	},
 
 	"LIGHT": {
 		"name": "The bottom of the pool",
@@ -105,16 +110,22 @@
 			{
 				"exit": "UP",
 				"target": "FALL"
-			}],
-				"items": [
-			{
-				"item": "ROCK",
-				"desc": "You pick up the rock, and it continues to glow but nothing seems happens."
-			}]},
+		}],
+		"items": [{
+			"item": "ROCK",
+			"desc": "You pick up the rock, and it continues to glow but nothing seems happens. Will you take the rock or leave it?",
+			"take": "You keep the glowing rock."
+		}]
+	},
 
 	"CLOUDS": {
 		"name": "High in the sky amidst the clouds",
-		"desc": "Suddenly, as if by magic, you find yourself floating among the clouds. The man from the clearing appears in front of you. He says you have earned the truth of the island. You are here today, like many before you, because you have to a turning point in life. Death has come, but by accepting your fate and the challenge of the island, you have proved you are ready to move on to your next life cycle. Once leaving this place your new life will begin. Until we meet again, live well."
-
+		"desc": "Suddenly, as if by magic, you find yourself floating among the clouds. The man from the clearing appears in front of you. He says you have earned the truth of the island. You are here today, like many before you, because you have to a turning point in life. Death has come, but by accepting your fate and the challenge of the island, you have proved you are ready to move on to your next life cycle. Once leaving this place your new life will begin. Until we meet again, live well.",
+		"exits": [
+			{
+				"exit": "",
+				"target": "BLACK:"
+			}],
+			"items": []
 	}
 }
