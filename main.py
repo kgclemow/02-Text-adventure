@@ -5,7 +5,7 @@ assert sys.version_info >= (3,7), "This script requires at least Python 3.7"
 
 # The game and item description files (in the same folder as this script)
 game_file = 'game.json'
-items_file = 'items.json'
+item_file = 'items.json'
 inventory = ['']
 points = 0
 moves = 0
@@ -16,7 +16,7 @@ def load_files():
     try:
         __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
         with open(os.path.join(__location__, game_file)) as json_file: game = json.load(json_file)
-        with open(os.path.join(__location__, items_file)) as json_file: items = json.load(json_file)
+        with open(os.path.join(__location__, item_file)) as json_file: items = json.load(json_file)
         return (game,items)
     except:
         print("There was a problem reading either the game or item file.")
