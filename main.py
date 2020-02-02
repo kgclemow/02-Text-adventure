@@ -5,7 +5,7 @@ assert sys.version_info >= (3,7), "This script requires at least Python 3.7"
 
 # The game and item description files (in the same folder as this script)
 game_file = 'game.json'
-item_file = 'items.json'
+item_file = 'item.json'
 inventory = ['']
 points = 0
 moves = 0
@@ -80,6 +80,7 @@ def update(game,items,current,response):
     for e in c["exits"]:
         if response == e["exit"]:
             return e["target"]
+        return current
 
     for i in c["items"]:
         if response == "GET" or "TAKE" or "PICK UP" + items["items"] and not check_inventory(items["items"]):
