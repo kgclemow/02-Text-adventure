@@ -6,8 +6,7 @@ assert sys.version_info >= (3,7), "This script requires at least Python 3.7"
 # The game and item description files (in the same folder as this script)
 game_file = 'game.json'
 item_file = 'item.json'
-inventory = ['']
-points = 0
+inventory: ""
 moves = 0
 
 # Load the contents of the files into the game and items dictionaries. You can largely ignore this
@@ -23,36 +22,12 @@ def load_files():
         os._exit(1)
 
 
-def check_inventory(items):
-    for i in inventory:
-        if i == items:
-            return True
-    return False 
-
-def calculate_points(items):
-    points = 0
-    for i in inventory:
-        if i in items:
-            points += items[i]["points"]
-    return points 
-
-
-def render(game,items,current,moves,points):
+def render(game,items,current,moves):
     c = game[current]
-    print("\n\n{} Moves\t\t\t{} Points".format(moves, points))
+    
+    print("\n\n{} Moves".format(moves))
     print("\n\nYou are at the " + c["name"])
     print(c["desc"])
-
-    #display any items
-    for item in c["items"]:
-        if not check_inventory(item):
-            print(item["desc"])
-
-    #display item information
-    for i in inventory:
-        if i in items:
-            if current in items[i]["exits"]:
-                print(items[i]["exits"][current])
 
     print("\nAvailable exits: ")
     for e in c["exits"]:
@@ -80,20 +55,12 @@ def update(game,items,current,response):
     for e in c["exits"]:
         if response == e["exit"]:
             return e["target"]
-        return current
 
-    for i in c["items"]:
-        if response == "GET" or "TAKE" or "PICK UP" + items["items"] and not check_inventory(items["items"]):
-            print(items["take"])
-            inventory.append(items["items"])
+    for item in c["items"]:
+        if response == "GET " or "TAKE " or "PICK UP " + items["items"]:
+            print(item["take"])
             return current
     
-    for i in inventory:
-        if i in items:
-            for action in items[i]["actions"]:
-                if response == action + " " + i:
-                    print(items[i]["actions"][action])
-                    return current
 
     if response[0:3] == "GET" or "TAKE" or "PICK UP":
         print("You can't take that.")
@@ -110,14 +77,13 @@ def update(game,items,current,response):
 # The main function for the game
 def main():
     current = 'START'  # The starting location
-    end_game = ['BLACK']  # Any of the end-game locations
-    points = 0
+    end_game = ['CLOUDS']  # Any of the end-game locations
     moves = 0
 
     (game,items) = load_files()
 
     while True:
-        render(game,items,current,moves,points)
+        render(game,items,current,moves)
         if current in end_game:
             break
 
@@ -128,10 +94,9 @@ def main():
 
         current = update(game,items,current,response)
         moves += 1
-        points = calculate_points(items)
 
     print("I hope you enjoyed playing! See you next time.")
-    print("You scores {} points in {} moves.".format(points,moves))
+    print("You completed the game in {} moves.".format(moves))
 
 # run the main function
 if __name__ == '__main__':

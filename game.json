@@ -60,19 +60,30 @@
 	
 	"DEEPJUNGLE": {
 		"name": "Deep in the dark jungle",
-		"desc": "It is darker here. Suddenly you hear a rustle in the leaves, a twig snaps. A large, black, hairy, head appears and then a jaguar emerges with a low growl. You see a sword on the ground.",
+		"desc": "It is darker here. Suddenly you hear a rustle in the leaves, a twig snaps. A large, black, hairy, head appears and then a jaguar emerges with a low growl. You see a sword on the ground, and you know you can't fight without it.",
 		"exits": [
 			{
 				"exit": "RUN",
 				"target": "SJUNGLE"
 			}, {
-				"exit": "NORTH",
-				"target": "SJUNGLE" 
+				"exit": "FIGHT",
+				"target": "WIN" 
 		}],
 		"items": [{
 			"item": "SWORD",
-			"desc": "You pick up the sword to face the jaguar, but you should know better than to face a wild beast. It attacks."
+			"desc": "You pick up the sword to face the jaguar, but you should know better than to face a wild beast. It attacks.",
+			"take": "You pick up the sword."
 		}]
+	},
+	"WIN": {
+		"name": "Deep in the dark jungle",
+		"desc": "The Jaguar bolts forward. Both hands on the sword, you face the creature... It doesn't take long before you stand over the Jaguar, victorious.",
+		"exits": [
+			{
+				"exit": "NORTH",
+				"target": "SJUNGLE"
+		}],
+		"items": []
 	},
 
 	"FALL": {
@@ -91,7 +102,7 @@
 
 	"CLEARING": {
 		"name": "An empty clearing, or so it seems",
-		"desc": "Across the clearing an old man dressed in a raggy cloak steps out of the shadows. He approaches you. When he speaks, he asks if you have brought it.",
+		"desc": "Across the clearing an old man dressed in a raggy cloak steps out of the shadows. He approaches you. When he speaks, he asks if you have collected three objects for entry: the note in a bottle, the sword, and the rock.",
 		"exits": [
 			{
 				"exit": "YES",
@@ -124,7 +135,7 @@
 		"exits": [
 			{
 				"exit": "",
-				"target": "BLACK:"
+				"target": ""
 			}],
 			"items": []
 	}

@@ -5,21 +5,18 @@
         },
         "actions": {
             "read": "You have one day to discover the truth of the island. It is the only way to stay alive."
-        },
-        "points": 1
+        }
     },
     "ROCK": {
         "exits": {},
         "actions": {
             "hold": "You feel a hum run through you."
-        },
-        "points": 10
+        }
     },
     "SWORD": {
         "exits": {},
         "actions": {
             "fight": "You wield the sword over your head to protect against the attack, and somehow you are able to take down the jaguar."
-        },
-        "points": 1
+        }
     }
 }
