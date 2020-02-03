@@ -44,9 +44,9 @@ def render(game,items,current,moves,points):
     print(c["desc"])
 
     #display any items
-    for i in c["items"]:
-        if not check_inventory(items["items"]):
-            print(items["desc"])
+    for item in c["items"]:
+        if not check_inventory(item):
+            print(item["desc"])
 
     #display item information
     for i in inventory:
